@@ -26,7 +26,6 @@ class JobijobaService
 
             return new JobijobaResponse($response);
         } catch (\Exception $exception) {
-            dd($exception);
             // @TODO make a proper custom error handler
 
             $this->logger->error("JobijobaService: send error:".$exception->getMessage());

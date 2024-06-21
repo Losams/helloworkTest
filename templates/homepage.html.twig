@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Test Hellowork Yeah!</h1>
+
+    <div class="p-2">
+        total offre : {{ total }}
+    </div>
+
+    <div class="m-2">
+        <a href="{{ path('homepage', { 'page': 1 }) }}" class="btn btn-primary">page 1</a>
+        <a href="{{ path('homepage', { 'page': 2 }) }}" class="btn btn-primary">page 2</a>
+        <a href="{{ path('homepage', { 'page': 3 }) }}" class="btn btn-primary">page 3</a>
+        <a href="{{ path('homepage', { 'page': 4 }) }}" class="btn btn-primary">page 4</a>
+    </div>
+
+    <div class="row">
+        {% for job in jobs %}
+            <div class="col-4">
+                <div class="card m-2" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job.title|e }}</h5>
+                        <p class="card-text">{{ job.description|e }}</p>
+                        <a href="{{ job.link }}" class="btn btn-primary">Voir l'offre</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

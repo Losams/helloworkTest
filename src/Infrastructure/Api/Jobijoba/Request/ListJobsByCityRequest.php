@@ -23,7 +23,7 @@ class ListJobsByCityRequest implements JobijobaRequestInterface
     public function getParams(): array {
         return [
             'page' => $this->page,
-            'city' => $this->city
+            'where' => $this->city
         ];
     }
 }
